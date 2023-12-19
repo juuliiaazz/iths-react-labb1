@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // dropdown med förslag på land, fält för användarens namn, fält för användarens mailadress
-export function Form({ selectData }) {
+export function Form({ onAddVotes, selectData }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [selectValue, setSelectValue] = useState("");
@@ -21,6 +21,8 @@ export function Form({ selectData }) {
 
     const newVote = { selectValue, name, email };
     console.log(newVote);
+
+    onAddVotes(newVote);
 
     setSelectValue("");
     setName("");

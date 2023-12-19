@@ -3,8 +3,14 @@ import { Form } from "./Form";
 import { VoteList } from "./VoteList";
 
 export default function App() {
+  const [votes, setVotes] = useState([]);
   const [selectData, setSelectData] = useState([]);
   // Lägga till API till dropdown i formuläret
+
+  // Lägga till saker i listan
+  function handleAddVotes(vote) {
+    setVotes((votes) => [...votes, vote]);
+  }
 
   useEffect(() => {
     fetchData();
@@ -20,8 +26,8 @@ export default function App() {
 
   return (
     <div>
-      <Form selectData={selectData} />
-      <VoteList />
+      <Form onAddVotes={handleAddVotes} selectData={selectData} />
+      <VoteList votes={votes} />
     </div>
   );
 }
