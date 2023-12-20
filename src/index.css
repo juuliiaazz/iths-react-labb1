@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "Lato Black";
+  src: url(assets\Lato-Black.ttf);
+}
+
+@font-face {
+  font-family: "Lato Regular";
+  src: url(assets\Lato-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.4rem;
+  font-family: sans-serif;
+  font-family: "Lato Regular";
+  font-weight: 500;
+  color: #fff;
+  background-color: #212121;
+  text-align: center;
+}
+
+.voteForm {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 0rem;
+  border-radius: 2.5rem;
+  height: 100%;
+  width: 90vw;
+  max-width: 600px;
+  margin: 20px auto auto;
+  padding-bottom: 20px;
+  background-color: #4d4c4c;
+}
+
+.voteForm label {
+  display: block;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.voteForm select {
+  cursor: pointer;
+}
+
+.voteForm input,
+select {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 60vw;
+  max-width: 400px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 60%;
+}
+
+.voteForm button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 4rem;
+  width: 16vh;
+  border: 0px;
+  border-radius: 10px;
+  margin-top: 2rem;
+  background-color: #312f2f;
+  color: #fff;
+  font-size: inherit;
+}
+
+.voteForm button:hover {
+  color: #4d4c4c;
+  cursor: pointer;
+}
+
+.voteList span {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 3px solid #4d4c4c;
+  border-radius: 1.5rem;
+  height: 100%;
+  width: 90vw;
+  max-width: 600px;
+  margin: 20px auto auto;
+  padding: 10px;
+}
+
+.error {
+  font-size: 2rem;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Lato Black";
+  font-size: 4rem;
+  font-weight: 400;
+  word-spacing: 10px;
+  padding: 2.4rem 0;
+}
+
+label {
+  font-family: "Lato Regular";
+  font-size: 3rem;
+}
+
+/* DESKTOP -----------------------------------------------------*/
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 5rem;
+  }
+}

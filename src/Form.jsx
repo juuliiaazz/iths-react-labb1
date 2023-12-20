@@ -1,5 +1,3 @@
-// en funktion för att hantera formuläret som ska innehålla:
-
 import { useState } from "react";
 
 // dropdown med förslag på land, fält för användarens namn, fält för användarens mailadress
@@ -12,8 +10,29 @@ export function Form({ onAddVotes, selectData }) {
   function handleSubmit(e) {
     e.preventDefault();
 
+    if (!selectValue && !name && !email) {
+      setError(<p className="error">⚠️ Du måste fylla i fälten! ⚠️</p>);
+      return;
+    } else {
+      setError("");
+    }
+
     if (!selectValue) {
-      setError(<p className="error">Du måste välja ett land!</p>);
+      setError(<p className="error">⚠️ Du måste välja ett land! ⚠️</p>);
+      return;
+    } else {
+      setError("");
+    }
+
+    if (!name) {
+      setError(<p className="error">⚠️ Du måste fylla i ditt namn! ⚠️</p>);
+      return;
+    } else {
+      setError("");
+    }
+
+    if (!email) {
+      setError(<p className="error">⚠️ Du måste fylla i din mailadress! ⚠️</p>);
       return;
     } else {
       setError("");
@@ -51,11 +70,9 @@ export function Form({ onAddVotes, selectData }) {
     <>
       <h1>Rösta på ditt favoritland!</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form className="voteForm" onSubmit={handleSubmit}>
         <label>Rösta på:</label>
         <SelectDropdown />
-
-        {error}
 
         <label>Ditt namn:</label>
         <input
@@ -76,6 +93,8 @@ export function Form({ onAddVotes, selectData }) {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Ange mailadress här..."
         ></input>
+
+        {error}
 
         <button>Rösta</button>
       </form>
